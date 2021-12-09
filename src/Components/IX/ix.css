@@ -1,3 +1,49 @@
-.test {
-    color: pink;
+
+.fft {
+    display: grid;
+    grid-template: repeat(10, 100px) / repeat(10, 100px);
+}
+
+.fft .gk {
+    grid-area: 8 / 5 / span 1 / span 2;
+}
+
+.fft .lb {
+    grid-area: 6 / 2 / span 1 / span 2;
+}
+
+.fft .cb-one {
+    grid-area: 6 / 4 / span 1 / span 2;
+}
+
+.fft .cb-two {
+    grid-area: 6 / 6 / span 1 / span 2;
+}
+
+.fft .rb {
+    grid-area: 6 / 8 / span 1 / span 2;
+}
+
+.fft .lw {
+    grid-area: 4 / 2 / span 1 / span 2;
+}
+
+.fft .cm {
+    grid-area: 4 / 4 / span 1 / span 2;
+}
+
+.fft .cam {
+    grid-area: 4 / 6 / span 1 / span 2;
+}
+
+.fft .rw {
+    grid-area: 4 / 8 / span 1 / span 2;
+}
+
+.fft .st-one {
+    grid-area: 2 / 4 / span 1 / span 2;
+}
+
+.fft .st-two {
+    grid-area: 2 / 6 / span 1 / span 2;
 }
