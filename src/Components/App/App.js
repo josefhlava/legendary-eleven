@@ -1,18 +1,44 @@
 import './App.css';
-import { Eleven } from '../IX/ix';
 import { IxSelector } from '../ixSelector/ixSelector'
-import React from 'react'
+import React, { useState } from 'react'
+import { Pitch } from '../Pitch/Pitch';
+import { fourFourTwo, fourThreeThree, fiveThreeTwo } from '../IX/ix';
 
 function App() {
-  const testFunc = (stuff) => {
-    console.log(stuff);
+  const [eleven, setEleven] = useState('four-four-two');
+  const [team, setTeam] = useState([]);
+
+
+  const handleChange = (e) => {
+    setEleven(e.target.value);
   }
+
+  const selectEleven = (e) => {
+    e.preventDefault();
+    setTeam([]);
+    if (eleven === 'four-four-two') {
+      setTeam(fourFourTwo);
+    } else if (eleven === 'four-three-three') {
+      setTeam(fourThreeThree);
+    } else {
+      setTeam(fiveThreeTwo);
+    }
+  }
+
 
   return (
     <div className="App">
       <h1>Legendary IX</h1>
-      <IxSelector testFunc={testFunc} />
-      <Eleven />
+      <IxSelector 
+        eleven={eleven}
+        selectEleven={selectEleven}
+        setEleven={setEleven}
+        handleChange={handleChange}
+      />
+      <Pitch 
+        eleven={eleven}
+        team={team}
+      />
     </div>
   );
 }
